@@ -68,6 +68,17 @@ manager = Manager()
 downloaded_point_list = []
 
 
+
+"""
+Check format
+"""
+if not args:
+    sys.stdout.write("Error: please give me a url or filename \n")
+    sys.stdout.flush()
+    sys.exit(0)    
+
+
+
 def get_curl(url):
     curl = pycurl.Curl()
     curl.setopt(pycurl.URL, url)
