@@ -79,6 +79,8 @@ if not args:
 
 
 
+sys.stdout.write("\n")
+
 def get_curl(url):
     curl = pycurl.Curl()
     curl.setopt(pycurl.URL, url)
@@ -132,7 +134,7 @@ def show_progbar(throughput):
         point_set_len - len(point_list)) / float(point_set_len) * 100
     
     sys.stdout.write(
-        "\r[%.0f%%]:%s\t\t" % (progress, throughput))
+        "[%.0f%%]:%s\t\t\r" % (progress, throughput))
     sys.stdout.flush()
 
 
@@ -232,5 +234,5 @@ while True:
     sys.stdout.flush()
         
     remove_info_from_disk()
-
-    sys.exit(0)
+    exit(0)
+    #print "hello"    
